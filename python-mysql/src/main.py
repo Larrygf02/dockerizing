@@ -1,12 +1,7 @@
 import mysql.connector
 connection = mysql.connector.connect(
-            host="ddd",
-            user="root",
-            password="123",
-            db="persodb"
+            host="db",
+            user="raul",
+            password="123"
 )
 print(connection)
-cursor = connection.cursor()
-cursor.execute("CREATE DATABASE persondb")
-connection.close()
-cursor.close()
