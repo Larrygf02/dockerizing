@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
-mongoose.connect('mongodb://mongo/mydatabase')
+console.log('hola')
+mongoose.connect('mongodb://mongo/mydatabase', { useNewUrlParser: true, useUnifiedTopology: true })
         .then(db => console.log('Db is conect', db.connection.host))
-        .catch(err => console.log(err))
+        .catch(err => console.log("Ocurrio un error con la conexion"))
