@@ -5,14 +5,17 @@ services:
         build: .
         depends_on: 
             - db
-            - adminer
     db:
         image: mysql
         command: --default-authentication-plugin=mysql_native_password
         restart: always
         environment:
-            MYSQL_ROOT_PASSWORD: 123
+            MYSQL_DATABASE: persondb
             MYSQL_USER: raul
+            MYSQL_PASSWORD: 123
+            MYSQL_ROOT_PASSWORD: 123
+        ports:
+            - 3306:3306
         volumes:
             - db-volume:/var/lib/mysql
     adminer:
